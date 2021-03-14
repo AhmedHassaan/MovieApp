@@ -13,17 +13,17 @@ interface EndpointsInterface {
 
     @GET("popular")
     fun getPopularMovies(@Query("api_key") apiKey: String = Constants.API_KEY.constant,
-                         @Query("language") lang: String = this.lang) : RequestModel
+                         @Query("language") lang: String = this.lang) : Call<RequestModel>
 
     @GET("top_rated")
     fun getTopRatedMovies(@Query("api_key") apiKey: String = Constants.API_KEY.constant,
-                         @Query("language") lang: String = this.lang) : RequestModel
+                         @Query("language") lang: String = this.lang) : Call<RequestModel>
 
     @GET("upcoming")
     fun getUpcomingMovies(@Query("api_key") apiKey: String = Constants.API_KEY.constant,
-                         @Query("language") lang: String = this.lang) : RequestModel
+                         @Query("language") lang: String = this.lang) : Call<RequestModel>
 
     @GET("now_playing")
     fun getNowPlayingMovies(@Query("api_key") apiKey: String = Constants.API_KEY.constant,
-                         @Query("language") lang: String = this.lang) : RequestModel
+                         @Query("language") lang: String = this.lang) : Call<RequestModel>
 }

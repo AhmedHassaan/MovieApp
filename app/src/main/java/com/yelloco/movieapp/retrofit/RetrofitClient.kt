@@ -2,6 +2,7 @@ package com.yelloco.movieapp.retrofit
 
 import com.yelloco.movieapp.enums.Constants
 import com.yelloco.movieapp.retrofit.models.RequestModel
+import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -15,22 +16,22 @@ object RetrofitClient {
             .create(EndpointsInterface::class.java)
     }
 
-    fun getPopularMovies() : RequestModel
+    fun getPopularMovies() : Call<RequestModel>
     {
         return retrofit.getPopularMovies()
     }
 
-    fun getNowPlayingMovies() : RequestModel
+    fun getNowPlayingMovies() : Call<RequestModel>
     {
         return retrofit.getNowPlayingMovies()
     }
 
-    fun getTopRatedMovies() : RequestModel
+    fun getTopRatedMovies() : Call<RequestModel>
     {
         return retrofit.getTopRatedMovies()
     }
 
-    fun getUpcomingMovies() : RequestModel
+    fun getUpcomingMovies() : Call<RequestModel>
     {
         return retrofit.getUpcomingMovies()
     }

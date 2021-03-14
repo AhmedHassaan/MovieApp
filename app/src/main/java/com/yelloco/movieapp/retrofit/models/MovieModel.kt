@@ -3,6 +3,9 @@ package com.yelloco.movieapp.retrofit.models
 import com.google.gson.annotations.SerializedName
 
 data class MovieModel(
+    @SerializedName("id")
+    val movieId: Int,
+
     @SerializedName("title")
     val name: String,
 
