@@ -5,4 +5,5 @@
     <string name="back_button" translatable="false">back_button</string>
     <string name="new_release">New Release</string>
     <string name="menu_button" translatable="false">menu_button</string>
+    <string name="please_wait">Please Wait</string>
 </resources>
