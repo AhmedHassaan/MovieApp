@@ -7,34 +7,31 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
 
-    private val retrofit by lazy {
+    private val retrofit: EndpointsInterface by lazy {
         Retrofit.Builder()
             .baseUrl(Constants.BASE_URL.constant)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-    }
-
-    private val API: EndpointsInterface by lazy {
-        retrofit.create(EndpointsInterface::class.java)
+            .create(EndpointsInterface::class.java)
     }
 
     fun getPopularMovies() : RequestModel
     {
-        return API.getPopularMovies()
+        return retrofit.getPopularMovies()
     }
 
     fun getNowPlayingMovies() : RequestModel
     {
-        return API.getNowPlayingMovies()
+        return retrofit.getNowPlayingMovies()
     }
 
     fun getTopRatedMovies() : RequestModel
     {
-        return API.getTopRatedMovies()
+        return retrofit.getTopRatedMovies()
     }
 
     fun getUpcomingMovies() : RequestModel
     {
-        return API.getUpcomingMovies()
+        return retrofit.getUpcomingMovies()
     }
 }
